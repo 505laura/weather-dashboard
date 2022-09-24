@@ -87,3 +87,9 @@ function getWeatherForCity(city) {
         }
     });
 };
+
+// Load stored data about a city
+function loadWeatherForCity(city) {
+    const data = JSON.parse(localStorage.getItem(city) || '[]');
+    populateAllCards(data);
+}
