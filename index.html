@@ -20,10 +20,28 @@
     <div class="container col-12">
       <div class="row">
         <form class="row mx-auto form-group">
-        <!-- Style the search input area -->
+          <!-- Style the search input area -->
           <input id="search-input" class="col form-control mr-2" type="text" placeholder="Search city..." name="search" />
           <!-- Add and style a button to search cities  -->
           <button id="search-button" class="btn btn-primary" type="submit">Search</button>
         </form>
       </div>
     </div>
+    
+    <!-- Add weather cards beginning from the left of the webpage -->
+    <div class="d-flex flex-row">
+      <div class="col-10">
+        <div class="col-12 row mt-5">
+          <!-- Place weather card into its own column -->
+          <div class="card col-2 mr-5">
+            <div id="card-day-0" class="card-body">
+              <h4 class="card-title">Today</h4>
+              <img class="card-img-bottom" src="http://openweathermap.org/img/wn/10d@4x.png" alt="Weather image for current conditions"/>
+              <!-- Add text that will display weather data -->
+              <p class="card-text rain">Rain</p>
+              <p class="card-text temp">Temp: <span></span>°C</p>
+              <p class="card-text wind">Wind: <span></span>m/s</p>
+              <p class="card-text humidity">Humidity: <span></span>%</p>
+            </div>
+          </div>
+          
