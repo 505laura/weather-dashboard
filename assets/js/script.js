@@ -100,3 +100,20 @@ function searchForWeather(event) {
     const city = $('#search-input').val();
     getWeatherForCity(city);
 }
+
+// When a recent city is clicked, load the weather data for that city
+function recentClicked(event) {
+    const city = $(event.target).text().split('. ')[1];
+    loadWeatherForCity(city);
+}
+
+// When the page loads, setup the page
+$(function(){ 
+    // Hide recent searches and only show as many as we have saved
+    $('#recent-searches').children('li').hide();
+    showRecents();
+
+    // Attach event listeners to the search button and recent searches
+    $('#search-button').click(searchForWeather); 
+    $('.list-group-item').click(recentClicked);
+});
