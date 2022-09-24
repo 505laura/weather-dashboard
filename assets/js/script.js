@@ -33,3 +33,16 @@ function getTimeInCity(timezone) {
     const now = moment().utc().utcOffset(timezone / 60);
     return `, ${now.format('h:mm a')}`;
 }
+
+// Fill in the cards with weather data
+function populateAllCards(data) {
+    $('#city-name').text(data.city.name + getTimeInCity(data.city.timezone));
+    populateCard('#card-day-0', data.list[0]);
+    let card = 1;
+    for(let i = 0; i < data.list.length; i++) {
+        // Fill in each card with the weather at 12pm
+        if(moment(data.list[i].dt_txt).format('h:mm a') === '12:00 pm') {
+            populateCard(`#card-day-${card++}`, data.list[i]);
+        }
+    }
+}
