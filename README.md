@@ -8,7 +8,7 @@ It also keeps a record of recent searches on the right side of the page that can
 
 ## Visuals
 
-![Webpage]()
+![Webpage](https://github.com/505laura/weather-dashboard/blob/main/assets/images/weather-dashboard.png?raw=true)
 
 ## Usage
 Use the search bar text area at the top of the page to search for any city in the world. Press the blue 'Search' button to retrieve data.
