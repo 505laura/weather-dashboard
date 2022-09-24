@@ -93,3 +93,10 @@ function loadWeatherForCity(city) {
     const data = JSON.parse(localStorage.getItem(city) || '[]');
     populateAllCards(data);
 }
+
+// When the search button is clicked, get the weather for the city in the input
+function searchForWeather(event) {
+    event.preventDefault();
+    const city = $('#search-input').val();
+    getWeatherForCity(city);
+}
