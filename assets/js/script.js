@@ -46,3 +46,12 @@ function populateAllCards(data) {
         }
     }
 }
+
+// Store weather data for city in local storage
+function storeWeatherForCity(city, data) {
+    if(!recentlySearched.includes(city)) {
+        recentlySearched.unshift(city);
+        saveRecents();
+    }
+    localStorage.setItem(city, JSON.stringify(data));
+}
