@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="./assets/css/reset.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css"/>
-    <title>Weather Dashboard</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Dashboard</title>
+</head>
 
-  <body>
-    <header>
-        <h1>Weather Dashboard</h1>
-        <button>Dark/Light</button>
-    </header>
-
-    <main>
-      <div>
-        <form>
-          <input type="text" placeholder="Search city..." name="search">
-          <button type="submit">Search</button>
+<body>
+  <!-- Center heading and add margins  -->
+  <header class="w-100 my-4">
+    <h1 class="align-self-center text-center mx-auto">Weather Dashboard</h1>
+  </header>
+  
+  <main class="w-100">
+    <!-- Have the search bar use the entire row -->
+    <div class="container col-12">
+      <div class="row">
+        <form class="row mx-auto form-group">
+        <!-- Style the search input area -->
+          <input id="search-input" class="col form-control mr-2" type="text" placeholder="Search city..." name="search" />
+          <!-- Add and style a button to search cities  -->
+          <button id="search-button" class="btn btn-primary" type="submit">Search</button>
         </form>
       </div>
-      <section>
-        <p>Forecast for...</p>
-        <button>Today</button>
-        <button>Next 5 days</button>
-        <div>Today</div>
-        <div>Rest of week</div>
-      </section>
-      <section>
-        <p>Map</p>
-      </section>
-      <section>
-        <h2>Recently searched</h2>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-        </ul>
-      </section>
-    </main>
-
-    <footer>&copy 505laura</footer>
-  </body>
-</html>
+    </div>
