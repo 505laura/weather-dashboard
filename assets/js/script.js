@@ -67,3 +67,23 @@ function showRecents() {
     }
     saveRecents();
 }
+
+// Get weather data for city from the api and put it on the page in cards
+function getWeatherForCity(city) { 
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=${key}`
+    fetch(apiUrl).then((response) => {
+        return response.json();
+    }).then((data) => {
+        // If the city is not found, highlight the search bar in red to alert the user
+        if(data.cod === '404') {
+            $('#search-input').addClass('is-invalid');
+            return;
+        } else {
+            // If the city is found, remove the red highlight (if it is there) and fill in the cards with the data
+            $('#search-input').removeClass('is-invalid');
+            populateAllCards(data);
+            storeWeatherForCity(city, data);
+            showRecents();
+        }
+    });
+};
