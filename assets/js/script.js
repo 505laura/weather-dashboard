@@ -55,3 +55,15 @@ function storeWeatherForCity(city, data) {
     }
     localStorage.setItem(city, JSON.stringify(data));
 }
+
+// Display recently searched cities on the side
+function showRecents() {
+    getRecents();
+    const recents = $('#recent-searches');
+    for(let i = 0; i < recentlySearched.length; i++) {
+        const recent = recents.children('li').eq(i);
+        recent.text(`${i + 1}. ${recentlySearched[i]}`);
+        recent.show();
+    }
+    saveRecents();
+}
