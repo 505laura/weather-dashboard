@@ -27,3 +27,9 @@ function populateCard(card, data) {
     today.children('.wind').children('span').text(data.wind.speed);
     today.children('.humidity').children('span').text(data.main.humidity);
 }
+
+// Get the current time in the city
+function getTimeInCity(timezone) {
+    const now = moment().utc().utcOffset(timezone / 60);
+    return `, ${now.format('h:mm a')}`;
+}
